@@ -60,9 +60,7 @@
     var tFirstTrain = childSnapshot.val().firstTrain;
   
     var timeArray = tFirstTrain.split(":");
-    var trainTime = moment()
-      .hours(timeArray[0])
-      .minutes(timeArray[1]);
+    var trainTime = moment().hours(timeArray[0]).minutes(timeArray[1]);
     var maxMoment = moment.max(moment(), trainTime);
     var tMinutes;
     var tArrival;
@@ -72,9 +70,7 @@
       tArrival = trainTime.format("hh:mm A");
       tMinutes = trainTime.diff(moment(), "minutes");
     } else {
-      // Calculate the minutes until arrival using hardcore math
-      // To calculate the minutes till arrival, take the current time in unix subtract the FirstTrain time
-      // and find the modulus between the difference and the frequency.
+
       var differenceTimes = moment().diff(trainTime, "minutes");
       var tRemainder = differenceTimes % tFrequency;
       tMinutes = tFrequency - tRemainder;
