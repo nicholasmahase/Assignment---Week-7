@@ -17,18 +17,10 @@
     event.preventDefault();
   
     // Grabs user input
-    var trainName = $("#train-name-input")
-      .val()
-      .trim();
-    var trainStop = $("#destination-input")
-      .val()
-      .trim();
-    var firstTrain = $("#first-train-input")
-      .val()
-      .trim();
-    var frequency = $("#frequency-input")
-      .val()
-      .trim();
+    var trainName = $("#train-name-input").val().trim();
+    var trainStop = $("#destination-input").val().trim();
+    var firstTrain = $("#first-train-input").val().trim();
+    var frequency = $("#frequency-input").val().trim();
   
     // Creates local "temporary" object for holding train data
     var newTrain = {
