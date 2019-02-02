@@ -20,7 +20,7 @@
     var trainName = $("#train-name-input")
       .val()
       .trim();
-    var destination = $("#destination-input")
+    var trainStop = $("#destination-input")
       .val()
       .trim();
     var firstTrain = $("#first-train-input")
@@ -33,7 +33,7 @@
     // Creates local "temporary" object for holding train data
     var newTrain = {
       name: trainName,
-      destination: destination,
+      destination: trainStop,
       firstTrain: firstTrain,
       frequency: frequency
     };
@@ -63,14 +63,14 @@
   
     // Store everything into a variable.
     var tName = childSnapshot.val().name;
-    var tDestination = childSnapshot.val().destination;
+    var tStop = childSnapshot.val().destination;
     var tFrequency = childSnapshot.val().frequency;
     var tFirstTrain = childSnapshot.val().firstTrain;
   
-    var timeArr = tFirstTrain.split(":");
+    var timeArray = tFirstTrain.split(":");
     var trainTime = moment()
-      .hours(timeArr[0])
-      .minutes(timeArr[1]);
+      .hours(timeArray[0])
+      .minutes(timeArray[1]);
     var maxMoment = moment.max(moment(), trainTime);
     var tMinutes;
     var tArrival;
@@ -98,7 +98,7 @@
     $("#train-table > tbody").append(
       $("<tr>").append(
         $("<td>").text(tName),
-        $("<td>").text(tDestination),
+        $("<td>").text(tStop),
         $("<td>").text(tFrequency),
         $("<td>").text(tArrival),
         $("<td>").text(tMinutes)
