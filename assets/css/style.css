@@ -1,0 +1,13 @@
+.jumbotron {
+    background-color: #000;
+    color: #fff;
+    font-size: 40px;
+}
+.jumbotron:hover {
+    background: url(../images/train.gif);
+}
+.header-text {
+    text-align: center;
+    padding: 5px;
+}
+
